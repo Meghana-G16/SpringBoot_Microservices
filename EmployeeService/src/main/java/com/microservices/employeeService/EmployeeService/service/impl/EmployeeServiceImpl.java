@@ -6,13 +6,11 @@ import com.microservices.employeeService.EmployeeService.dto.EmployeeDto;
 import com.microservices.employeeService.EmployeeService.entity.Employee;
 import com.microservices.employeeService.EmployeeService.exception.EmailAlreadyExistsException;
 import com.microservices.employeeService.EmployeeService.exception.ResourceNotFoundException;
-import com.microservices.employeeService.EmployeeService.repository.EmployeeRespository;
+import com.microservices.employeeService.EmployeeService.repository.EmployeeRepository;
 import com.microservices.employeeService.EmployeeService.service.EmployeeServiceInterface;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.Optional;
@@ -21,7 +19,7 @@ import java.util.Optional;
 @AllArgsConstructor
 public class EmployeeServiceImpl implements EmployeeServiceInterface {
 
-    EmployeeRespository employeeRespository;
+    EmployeeRepository employeeRespository;
     ModelMapper modelMapper = new ModelMapper();
     //private RestTemplate restTemplate;
     private WebClient webClient;
